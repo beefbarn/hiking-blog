@@ -4,51 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Hiking Blog</title>
+    <title>Phoenixville Blog</title>
+
 </head>
 
 <body>
-    <h1 class="big-header centered" id="big-header">Phoenixville Blog</h1>
-    <br>
-    <h2 class="q-number centered" id="q-number">Question 1
+<!-- Dynamic background elements -->
+    <div class="fullscreen-div" id="eyecandy-div">
         <br>
         <br>
-        <div class="the-question centered" id="the-question">Which of
-        these topics do you feel like focusing on?</div>
         <br>
         <br>
-        <input class="the-button centered-block" id="the-button-1"
-        value="Creep Score" type="button">
-        <input class="the-button centered-block" id="the-button-2"
-        value="KDA" type="button">
-        <br>
-        <br>
-        <input class="the-button centered-block" id="the-button-3"
-        value="Objectives" type="button">
-        <input class="the-button centered-block" id="the-button-4"
-        value="Chilling" type="button">
-    </h2>
-    <br>
-    <br>
-    <h3 class="centered">Search Your Rank!
-        <br>
-        <br>
-        <label for="game-name" class="p-rank">Summoner Name</label>
-        <input id="game-name" name="game-name" type="text" placeholder="Summoner Name" class="p-rank">
-        <br>
-        <br>
-        <label for="tag-line" class="p-rank">Tag Line</label>
-        <input id="tag-line" name="tag-line" type="text" placeholder="Tag Line" class="p-rank">
-        <br>
-        <br>
-        <button id="search-button" class="p-rank">Search</button>
-        <br>
-        <br>
-        <div id="table-container">
-            <p id="rank-display" class="p-rank"></p>
+        <div class="centered">
+            <h1 class="blog-title">Phoenixville Blog</h1>
         </div>
-    </h3>
 
-    <script src="script.js"></script>
+        <div class="buttons-container" id="buttons-container">
+            <button id="about-me-button" class="top-left pretty-button"><span>About Me</span></button>
+            <button class="top-right pretty-button"><span>Projects</span></button>
+            <button class="bottom-left pretty-button"><span>Capabilities</span></button>
+            <button class="bottom-right pretty-button-big"><span>Resume and Contact Info</span></button>
+        </div>
+    </div>
+    
+    <!-- Static About Me background elements -->
+    <div class="static-background" id="static-div">
+        <br><br>
+        <h1 id="about-me" class="centered">About Me</h1>
+        <div id="graphic-div" class="static-div-flex">
+            <div id="image-container" class="image-container"><span><img class="static-image" src="assets/images/cat.jpeg"></span></div>
+            <div id="graphic-container" class="graphic-container"><span>IMAGE OF A SOLIDWORKS SCREENSHOT OR SIMILAR</span></div>
+        </div>
+
+        <div class="static-div">
+            <h1 class="section-header">My Background</h1>
+            <p class="section">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+                fugiat nulla pariatur.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- Vanta CDN and Three JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.dots.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.globe.min.js"></script>
+    <!-- Particle Text CDNs -->
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>

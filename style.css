@@ -1,32 +1,286 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's size */
+}
+
 .centered {
     text-align: center;
+    color: rgb(237, 244, 255);
+    font-family: 'BebasRegular', sans-serif;
+    letter-spacing: 3px;
+    font-size: 60px;
 }
 
 .centered-block {
+    display: block;
     width: 140px;
     height: 40px;
     margin: 0 auto;
     background-color: lightpink;
 }
 
-.bigger-box {
-    width: 220px;
-    height: 60px;
-    margin: 0, auto;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
-body {
+.static-background {
+    width: 100%;
+    min-height: 100vh; /* Adjust height if needed */ 
+    margin: 0;
+    padding: 0;
+    background-size: cover; 
+    background-image: linear-gradient(to bottom, #121d24, #25563a);
+}
+
+.fullscreen-div {
+    position: relative;
     background-image: url('assets/mini-forest.jpg'); /* Make sure image.jpg is in the same folder as your HTML file */
     background-size: cover;   /* Makes the image cover the whole screen */
     background-repeat: no-repeat;  /* Prevents the image from repeating */
     background-position: center;   /* Centers the image */
+    background-color: darkgreen;
+    width: 100%; /* Viewport width */
+    height: 100vh; /* Viewport height */
+    margin: 0; /* Removes any default margin */
+    padding: 0; /* Removes any default padding */
 }
 
-.p-rank {
-	font-family: Gill Sans, Verdana;
-	font-size: 11px;
-	line-height: 14px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: bold;
+.buttons-container {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%; /* Optionally stretch the child div's width */
 }
+
+button {
+    position: absolute;
+    width: 180px;
+    height: 80px;
+}
+/* Sets the buttons in the corners */
+.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* CSS for nice buttons in corner*/
+.pretty-button {
+  align-items: center;
+  background-image: linear-gradient(144deg,#3f1616, #884e4e 50%,#aa8f8f);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(253, 74, 74, 0.2) 0 0 30px 3px;
+  box-sizing: border-box;
+  color: rgb(237, 244, 255);
+  display: flex;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
+}
+
+.pretty-button:active,
+.pretty-button:hover {
+  outline: 0;
+  box-shadow: rgba(253, 74, 74, 0.2) 0 0 20px 10px;
+  transition: 300ms;
+}
+
+.pretty-button span {
+  background-color: rgb(3, 3, 3);
+  padding: 26px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.pretty-button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .pretty-button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+
+  .pretty-button-big {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.pretty-button-big {
+    align-items: center;
+    background-image: linear-gradient(144deg,#3f1616, #884e4e 50%,#aa8f8f);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(253, 74, 74, 0.2) 0 0 30px 3px;
+    box-sizing: border-box;
+    color: rgb(237, 244, 255);
+    display: flex;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words */
+}
+  
+.pretty-button-big:active,
+.pretty-button-big:hover {
+  outline: 0;
+  box-shadow: rgba(253, 74, 74, 0.2) 0 0 20px 10px;
+  transition: 300ms;
+
+}
+
+.pretty-button-big span {
+  background-color: rgb(3, 3, 3);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.pretty-button-big:hover span {
+  background: none;
+}
+
+/* Imports the font from assets folder */
+@font-face {
+  font-family: 'BebasRegular';
+  src: url('assets/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Containers on the static background (the divs) */
+.static-div-flex {
+  width: 100%;
+  height: 21%;
+  display: flex;
+  justify-content: space-between; /* Adds space between the two containers */
+  align-items: center; /* Aligns items vertically */
+}
+
+
+/* Container for the image on static bg */
+.image-container {
+  width: 49%;
+  height: 211.3px;
+  text-align: center;
+}
+
+/* Resizes and align the image */
+.static-image {
+  display: block;
+  max-width:100%;
+  max-height:90%;
+  margin: auto;
+  border-radius: 20px;
+  border: 2px solid silver;
+}
+
+/* Container for the graphic on static bg */
+.graphic-container {
+  width: 49%;
+  height: 211.3px;
+  text-align: center;
+}
+
+/* Resizes and align the image */
+.static-graphic {
+  width: 600px;
+  height: 210px;
+  vertical-align: middle;
+}
+
+.section-header {
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 10px;
+  color: rgb(237, 244, 255);
+  font-family: 'BebasRegular', sans-serif;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+.section {
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10px;
+  color: rgb(237, 244, 255);
+  font-family: 'BebasLight', sans-serif;
+  letter-spacing: 3px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.static-div {
+  width: 100%;
+  height: 21%;
+  justify-content: space-between; /* Adds space between the two containers */
+  overflow: hidden;
+}
+
+/* Imports the font from assets folder */
+@font-face {
+  font-family: 'BebasLight';
+  src: url('assets/BebasNeue-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Background for the title (Phoenixville Blog) */
+.blog-title {
+    display: inline-block;         /* shrink wrap background to text */
+    background: #121d246d; /* dark green from image semi-transparent box */
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;            /* space inside box */
+    border-radius: 12px;           /* rounded edges */
+    font-size: 48px;               /* your title font size */
+    font-weight: bold;
+    color: #FFB88C;             /* set the font color for title */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* soft dark shadow */
+  }
