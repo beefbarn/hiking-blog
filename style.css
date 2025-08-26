@@ -32,7 +32,11 @@ html, body {
     margin: 0;
     padding: 0;
     background-size: cover; 
-    background-image: linear-gradient(to bottom, #121d24, #25563a);
+    background-image: linear-gradient(to bottom, 
+    #121d24 0%,      /* start at top */
+    #121d24 40%,     /* hold dark blue/green until 40% down */
+    #193f29 100%     /* then fade into the bottom color */
+    );
 }
 
 .fullscreen-div {
@@ -55,6 +59,26 @@ html, body {
     width: 100%; /* Optionally stretch the child div's width */
 }
 
+.bulletin-container {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers the container */
+    display: flex;       /* puts children side-by-side */
+    width: 60%;          /* container width */
+    height: 35%;         /* container height */
+    background-color: black;
+}
+
+.content-box {
+    flex: 1;             /* makes each box take 50% */
+    display: flex;
+    align-items: center; /* center text vertically */
+    justify-content: center; /* center text horizontally */
+    background-color: white;
+    border: 1px solid #ff0000; /* optional: to see separation */
+}
+
 button {
     position: absolute;
     width: 180px;
@@ -71,25 +95,15 @@ button {
     right: 20px;
 }
 
-.bottom-left {
-    bottom: 20px;
-    left: 20px;
-}
-
-.bottom-right {
-    bottom: 20px;
-    right: 20px;
-}
-
 /* CSS for nice buttons in corner*/
 .pretty-button {
   align-items: center;
-  background-image: linear-gradient(144deg,#3f1616, #884e4e 50%,#aa8f8f);
+  background-image: linear-gradient(144deg,#239ca7, #99ce99 50%,#ECECBB);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(253, 74, 74, 0.2) 0 0 30px 3px;
   box-sizing: border-box;
-  color: rgb(237, 244, 255);
+  color: #FFB88C;
   display: flex;
   font-family: Georgia, serif;
   font-size: 20px;
@@ -106,17 +120,20 @@ button {
   cursor: pointer;
   white-space: normal; /* Allow text to wrap */
   word-wrap: break-word; /* Break long words */
+  transition: color 0.3s ease;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* soft dark shadow */
 }
 
 .pretty-button:active,
 .pretty-button:hover {
   outline: 0;
-  box-shadow: rgba(253, 74, 74, 0.2) 0 0 20px 10px;
+  box-shadow: rgba(40, 0, 63, 0.2) 0 0 10px 5px;
   transition: 300ms;
+  color: rgb(40, 0, 63);
 }
 
 .pretty-button span {
-  background-color: rgb(3, 3, 3);
+  background-color: #121d24;
   padding: 26px 24px;
   border-radius: 6px;
   width: 100%;
@@ -133,58 +150,6 @@ button {
     font-size: 24px;
     min-width: 196px;
   }
-
-  .pretty-button-big {
-    font-size: 24px;
-    min-width: 196px;
-  }
-}
-
-.pretty-button-big {
-    align-items: center;
-    background-image: linear-gradient(144deg,#3f1616, #884e4e 50%,#aa8f8f);
-    border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(253, 74, 74, 0.2) 0 0 30px 3px;
-    box-sizing: border-box;
-    color: rgb(237, 244, 255);
-    display: flex;
-    font-family: Georgia, serif;
-    font-size: 22px;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
-    padding: 3px;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word; /* Break long words */
-}
-  
-.pretty-button-big:active,
-.pretty-button-big:hover {
-  outline: 0;
-  box-shadow: rgba(253, 74, 74, 0.2) 0 0 20px 10px;
-  transition: 300ms;
-
-}
-
-.pretty-button-big span {
-  background-color: rgb(3, 3, 3);
-  padding: 16px 24px;
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  transition: 300ms;
-}
-
-.pretty-button-big:hover span {
-  background: none;
 }
 
 /* Imports the font from assets folder */
@@ -275,7 +240,7 @@ button {
 /* Background for the title (Phoenixville Blog) */
 .blog-title {
     display: inline-block;         /* shrink wrap background to text */
-    background: #121d246d; /* dark green from image semi-transparent box */
+    background: #121d24; /* dark green from image semi-transparent box */
     backdrop-filter: blur(8px);
     padding: 10px 20px;            /* space inside box */
     border-radius: 12px;           /* rounded edges */
@@ -284,3 +249,78 @@ button {
     color: #FFB88C;             /* set the font color for title */
     text-shadow: 1px 1px 4px rgba(0,0,0,0.3); /* soft dark shadow */
   }
+
+/* The "About Me" Title Card */
+.about-me {
+    position: relative;            /* so we can use top offset */
+    display: inline-block;         /* shrink wrap background to text */
+    background: #239ca756;         /* semi-transparent dark green */
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #ECECBB;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    /* centering + vertical offset */
+    left: 50%;                     /* push it halfway across */
+    transform: translateX(-50%);   /* pull it back by half its own width (true centering) */
+    margin-top: 6vh;              /* 20% of viewport height from the top */
+}
+
+.about-me-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 90px auto;   /* center layout and give space */
+    gap: 5%;           /* space between columns */
+}
+
+.about-me-column {
+    flex: 1;             /* each column takes equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-image {
+    max-width: 100%;
+    height: 400px;       /* fixed "tall" size */
+    object-fit: cover;   /* crop to fit nicely */
+    border-radius: 12px;
+    border: 2px solid silver;
+}
+
+.about-me-text {
+    flex: 2;             /* center column is wider than the image columns */
+    color: rgb(237, 244, 255);
+    font-family: 'BebasLight', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Back to Top button and hover effect*/
+.back-to-top {
+    position: relative;           /* instead of absolute */
+    display: block;
+    margin: 40px auto;            /* horizontally centers */
+    padding: 12px 28px;
+    width: max-content;           /* shrink to fit text */
+    background: #239ca756;
+    color: #ECECBB;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}

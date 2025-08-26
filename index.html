@@ -20,38 +20,60 @@
         </div>
 
         <div class="buttons-container" id="buttons-container">
-            <button id="about-me-button" class="top-left pretty-button"><span>About Me</span></button>
-            <button class="top-right pretty-button"><span>Projects</span></button>
-            <button class="bottom-left pretty-button"><span>Capabilities</span></button>
-            <button class="bottom-right pretty-button-big"><span>Resume and Contact Info</span></button>
+            <button id="about-button" class="top-left pretty-button"><span>About</span></button>
+            <button class="top-right pretty-button"><span>Log In</span></button>
+        </div>
+
+        <div class="bulletin-container" id="bulletin-container">
+            <div class="content-box" id="content-box-1">
+                <span>Hello World!</span>
+            </div>
+            <div class="content-box" id="content-box-2">
+                <span>Hello World!</span>
+            </div>
         </div>
     </div>
     
     <!-- Static About Me background elements -->
     <div class="static-background" id="static-div">
         <br><br>
-        <h1 id="about-me" class="centered">About Me</h1>
-        <div id="graphic-div" class="static-div-flex">
-            <div id="image-container" class="image-container"><span><img class="static-image" src="assets/images/cat.jpeg"></span></div>
-            <div id="graphic-container" class="graphic-container"><span>IMAGE OF A SOLIDWORKS SCREENSHOT OR SIMILAR</span></div>
-        </div>
+        <h1 id="about-me" class="about-me centered">About Phoenixville</h1>
+        <div class="about-me-layout">
+            <div class="about-me-column">
+                <img class="about-me-image" src="assets/left-image.jpg" alt="Left image">
+            </div>
 
-        <div class="static-div">
-            <h1 class="section-header">My Background</h1>
-            <p class="section">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                fugiat nulla pariatur.
-            </p>
+            <div class="about-me-column about-me-text">
+                <p>
+                    Phoenixville is a vibrant community with a rich history and a growing cultural scene.
+                    From the restored steel mill to the bustling Bridge Street lined with restaurants and shops,
+                    it’s a town that balances tradition and innovation. This space will be a personal reflection
+                    on the people, the projects, and the experiences that make Phoenixville unique.
+                </p>
+            </div>
+
+            <div class="about-me-column">
+                <img class="about-me-image" src="assets/right-image.jpg" alt="Right image">
+            </div>
         </div>
+        
+        <button class="back-to-top" id="back-to-top">Return to Top</button>
     </div>
 
 
 
-    <!-- Vanta CDN and Three JS CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.dots.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.globe.min.js"></script>
-    <!-- Particle Text CDNs -->
+    <script>
+    document.getElementById('about-button').addEventListener('click', () => {
+        document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('back-to-top').addEventListener('click', () => {
+        document.getElementById('eyecandy-div').scrollIntoView({ behavior: 'smooth' });
+    });
+    </script>
+
+
+
 
     <script type="module" src="script.js"></script>
 </body>
