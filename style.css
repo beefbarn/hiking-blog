@@ -65,9 +65,9 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%); /* centers the container */
     display: flex;       /* puts children side-by-side */
+    gap: 20px;
     width: 60%;          /* container width */
-    height: 35%;         /* container height */
-    background-color: black;
+    height: 40%;         /* container height */
 }
 
 .content-box {
@@ -75,8 +75,88 @@ html, body {
     display: flex;
     align-items: center; /* center text vertically */
     justify-content: center; /* center text horizontally */
-    background-color: white;
-    border: 1px solid #ff0000; /* optional: to see separation */
+}
+
+.content-card {
+    background-color: #ECECBB;
+    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #239ca7;
+    overflow: hidden; /* important to clip inner scroll */
+}
+
+.scroll-inner {
+    padding: 20px;        /* adds spacing inside */
+    overflow-y: auto;     /* scrollable area */
+    flex: 1;              /* fills parent height */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;            /* space between cards */
+}
+
+/* Make the content box scrollable */
+#content-box-1 {
+    overflow-y: auto;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Arbutus&display=swap');
+
+/* "Recent Posts" title above the scrolls box */
+.content-title {
+    margin: 0;
+    padding: 10px 20px;
+    font-family: "Arbutus", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #121d24;
+    text-align: center;
+    background-color: #ECECBB;
+    border-bottom: 2px solid #239ca7;
+    border-radius: 12px 12px 0 0;
+
+    /* Fancy text effects */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Standard size for each preview card */
+.preview-card {
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 15px; /* match pretty-button rounding */
+    padding: 10px;
+    min-height: 100px;    /* optional minimum size */
+    flex: 0 0 50%;    /* flex-grow:0, flex-shrink:0, flex-basis:33% */
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(40,0,63,0.5);
+}
+
+/* Thumbnail image inside card */
+.preview-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+
+/* Thumbnail image */
+.preview-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
 }
 
 button {
@@ -84,6 +164,7 @@ button {
     width: 180px;
     height: 80px;
 }
+
 /* Sets the buttons in the corners */
 .top-left {
     top: 20px;
@@ -324,3 +405,5 @@ button {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
+
+
