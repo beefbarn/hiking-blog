@@ -86,7 +86,7 @@ html, body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    border: 3px solid #239ca7;
+    border: 4px solid #1e818a;
     overflow: hidden; /* important to clip inner scroll */
 }
 
@@ -118,7 +118,7 @@ html, body {
     color: #121d24;
     text-align: center;
     background-color: #ECECBB;
-    border-bottom: 2px solid #239ca7;
+    border-bottom: 2px solid #1e818a;
     border-radius: 12px 12px 0 0;
 
     /* Fancy text effects */
@@ -157,6 +157,51 @@ html, body {
     object-fit: cover;
     border-radius: 8px;
     margin-right: 10px;
+}
+
+.topics-grid {
+    display: flex;
+    justify-content: center; /* center the columns */
+    gap: 46px; /* set the space you want between them */
+    padding: 20px;
+    flex: 1;
+    height: 100%;
+}
+
+.topics-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* spacing between items */
+    font-family: 'BebasLight', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #239ca7;
+    justify-content: space-evenly; /* spread items evenly */
+    text-align: center; /* keeps them aligned in middle of each column */
+}
+
+.topics-column p {
+    margin: 0;
+    cursor: pointer;
+    padding: 8px 16px;        /* space inside the rectangle */
+    background-color: #c4c4c4; /* simple solid color */
+    border-radius: 12px;       /* rounded corners */
+    color: #000000;            /* text color */
+    text-align: center;
+    transition: 0.3s ease;
+
+    /* Fixed size for all boxes */
+    width: 200px;      /* same width for all boxes */
+    height: 50px;      /* same height for all boxes */
+    display: flex;     /* to center text vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+}
+
+.topics-column p:hover {
+    color: #e254ff; /* highlight color when hovering */
+
+    background-color: #585858; /* slightly darker on hover */
 }
 
 button {
@@ -211,6 +256,7 @@ button {
   box-shadow: rgba(40, 0, 63, 0.2) 0 0 10px 5px;
   transition: 300ms;
   color: rgb(40, 0, 63);
+  text-shadow: 1px 1px rgba(255, 255, 255, 1); /* soft dark shadow */
 }
 
 .pretty-button span {
