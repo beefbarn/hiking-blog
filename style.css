@@ -149,14 +149,28 @@ html, body {
     margin-right: 10px;
 }
 
+.preview-text-container {
+  display: flex;
+  flex-direction: column;  /* stack children vertically */
+  gap: 10px; /* optional: space between text and link */
+  width: 100%;
+  height: 70%;
+}
 
-/* Thumbnail image */
-.preview-card img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 10px;
+.preview-text {
+  color: black;
+}
+
+.article-link {
+  cursor: pointer;
+  color: #000000;
+  text-align: right; /* optional: align text to bottom right */
+  transition: 0.3s ease;
+  margin-left: 0; /* remove margin if you want it aligned with text */
+}
+
+.article-link:hover {
+    color: #e254ff; /* highlight color when hovering */
 }
 
 .topics-grid {
